@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/ft_home"/>
+
+    <item android:id="@+id/shopeeFeed"
+        android:title="Shopee Feed"
+        android:icon="@drawable/ft_shopeefeed"/>
+
+    <item android:id="@+id/shopeeLive"
+        android:title="Shopee Live"
+        android:icon="@drawable/ft_shopeelive"/>
+
+    <item android:id="@+id/thongbao"
+        android:title="Thông báo"
+        android:icon="@drawable/ft_thongbao"/>
+
+    <item android:id="@+id/toi"
+        android:title="Tôi"
+        android:icon="@drawable/toi"/>
+</menu>

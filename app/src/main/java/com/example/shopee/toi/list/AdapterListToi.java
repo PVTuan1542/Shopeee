@@ -1,7 +1,11 @@
 package com.example.shopee.toi.list;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,10 +23,12 @@ import com.example.shopee.R;
 import com.example.shopee.shopee_feed.AdapterOfListMenu;
 import com.example.shopee.shopee_feed.List_Menu;
 import com.example.shopee.toi.fragment.Fragment_dangnhap;
+import com.example.shopee.toi.fragment.fragmentDangKy;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class AdapterListToi extends  RecyclerView.Adapter<AdapterListToi.ViewHolder> {
+public class AdapterListToi extends  RecyclerView.Adapter<AdapterListToi.ViewHolder>  {
 
     ArrayList<list_Toi> list_menus;
     Context context;
@@ -72,14 +78,37 @@ public class AdapterListToi extends  RecyclerView.Adapter<AdapterListToi.ViewHol
 //        }
 
         //onclick item thì hiện fragment
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                AppCompatActivity activity = (AppCompatActivity)view.getContext();
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                AppCompatActivity activity = (AppCompatActivity)view.getContext();
+                FragmentManager fragmentManager = activity.getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
 //                Fragment_dangnhap fragment_dangnhap = new Fragment_dangnhap();
 //                activity.getFragmentManager().beginTransaction().replace(R.id.container,fragment_dangnhap).addToBackStack(null).commit();
-//            }
-//        });
+
+                Fragment_dangnhap fragment_dangnhap = new Fragment_dangnhap();
+
+                Bundle bundle = new Bundle();
+                list_Toi hocSinh = new list_Toi(list_menus.get(position).getAnh(),list_menus.get(position).getTen());
+
+                bundle.putSerializable("list", (Serializable) hocSinh);
+
+
+                //bundle.putString("test",list_menus.get(position).getTen());
+                //bundle.putInt("anh",list_menus.get(position).getAnh());
+                fragment_dangnhap.setArguments(bundle);
+
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.replace(R.id.container, fragment_dangnhap);
+                fragmentTransaction.commit();
+
+
+
+            }
+        });
 
     }
 

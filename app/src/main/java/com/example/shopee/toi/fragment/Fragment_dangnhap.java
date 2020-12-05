@@ -14,10 +14,13 @@ import androidx.annotation.Nullable;
 
 import com.example.shopee.R;
 import com.example.shopee.Toi_Activity;
+import com.example.shopee.toi.list.list_Toi;
+
+import java.util.ArrayList;
 
 public class Fragment_dangnhap extends Fragment {
 
-    TextView textView;
+    TextView tv_DangKy,tv_DangNhapSDT;
     ImageView imageView;
     Button bt_DangNhap;
     CallBackFragment callBackFragment;
@@ -32,6 +35,8 @@ public class Fragment_dangnhap extends Fragment {
 
         //add controler
         addControler(view);
+        //test bundle
+        setBundel(view);
 
         return  view;
 
@@ -72,8 +77,8 @@ public class Fragment_dangnhap extends Fragment {
     }
     //Nhấn textview đăng ký thì đến trang đăng ký
     private void dangKy(View view){
-        textView =(TextView) view.findViewById(R.id.tv_dangKy);
-        textView.setOnClickListener(new View.OnClickListener() {
+        tv_DangKy =(TextView) view.findViewById(R.id.tv_dangKy);
+        tv_DangKy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(callBackFragment != null){
@@ -82,6 +87,21 @@ public class Fragment_dangnhap extends Fragment {
             }
         });
     }
+    //set bundel
+    private void setBundel(View view){
+        tv_DangNhapSDT = (TextView) view.findViewById(R.id.et_dangNhapBangTinNhan);
+
+        Bundle bundle = getArguments();
+
+        list_Toi list;
+         list = (list_Toi) bundle.getSerializable("list");
+
+        if(bundle != null) {
+            tv_DangNhapSDT.setText(" "+list.getTen());
+            imageView.setImageResource(list.getAnh());
+        }
+    }
+
 
 }
 

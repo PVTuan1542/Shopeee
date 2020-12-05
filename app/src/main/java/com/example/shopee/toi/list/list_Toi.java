@@ -1,6 +1,8 @@
 package com.example.shopee.toi.list;
 
-public class list_Toi {
+import java.io.Serializable;
+
+public class list_Toi  {
     private int anh;
     private String ten;
 

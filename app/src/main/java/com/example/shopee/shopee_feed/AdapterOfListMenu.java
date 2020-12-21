@@ -2,7 +2,6 @@ package com.example.shopee.shopee_feed;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.shopee.R;
-import com.example.shopee.toi.fragment.Fragment_dangnhap;
 
 import java.util.ArrayList;
 
@@ -60,15 +58,6 @@ public class AdapterOfListMenu extends  RecyclerView.Adapter<AdapterOfListMenu.V
             holder.txtTen.setTextColor(Color.BLACK);
         }
 
-        //onclick item thì hiện fragment
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AppCompatActivity activity = (AppCompatActivity)view.getContext();
-                Fragment_dangnhap fragment_dangnhap = new Fragment_dangnhap();
-                activity.getFragmentManager().beginTransaction().add(R.id.recyclerView_dsmenu,fragment_dangnhap).addToBackStack(null).commit();
-            }
-        });
 
     }
 

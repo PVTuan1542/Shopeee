@@ -34,7 +34,7 @@
         android:src="@drawable/shopee_logo"/>
     <EditText
         android:paddingLeft="20dp"
-        android:id="@+id/et_tenDangNhap"
+        android:id="@+id/et_phone"
         android:inputType="text"
         android:maxLines="1"
         android:layout_marginRight="15dp"
@@ -46,16 +46,16 @@
         android:layout_height="50dp"
         android:drawableLeft="@drawable/toi"
         android:drawablePadding="15dp"
-        android:hint="Email/Số điện thoại/Tên đăng nhập"/>
+        android:hint="Số điện thoại"/>
     <EditText
         android:paddingLeft="20dp"
         android:id="@+id/et_pass"
-        android:inputType="number"
+        android:inputType="textPassword"
         android:maxLines="1"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="20dp"
-        android:layout_below="@id/et_tenDangNhap"
+        android:layout_below="@id/et_phone"
         android:layout_width="match_parent"
         android:textSize="16sp"
         android:layout_height="50dp"

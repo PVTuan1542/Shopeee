@@ -49,7 +49,23 @@
         android:layout_height="55dp"
         android:drawableLeft="@drawable/toi"
         android:drawablePadding="15dp"
-        android:hint="Email/Tên đăng nhập"/>
+        android:hint="Họ Tên"/>
+    <EditText
+        android:paddingLeft="20dp"
+        android:id="@+id/soDT"
+        android:backgroundTint="#C3C3C3"
+        android:inputType="number"
+        android:maxLines="1"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/et_tenDangNhap"
+        android:layout_width="match_parent"
+        android:textSize="16sp"
+        android:layout_height="55dp"
+        android:drawableLeft="@drawable/call"
+        android:drawablePadding="15dp"
+        android:hint="Số điện thoại"/>
     <EditText
         android:paddingLeft="20dp"
         android:id="@+id/et_pass1"
@@ -59,7 +75,7 @@
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
-        android:layout_below="@id/et_tenDangNhap"
+        android:layout_below="@id/soDT"
         android:layout_width="match_parent"
         android:textSize="16sp"
         android:layout_height="55dp"
@@ -83,22 +99,7 @@
         android:drawablePadding="15dp"
         android:hint="Nhập lại mật khẩu"/>
 
-    <EditText
-        android:paddingLeft="20dp"
-        android:id="@+id/soDT"
-        android:backgroundTint="#C3C3C3"
-        android:inputType="number"
-        android:maxLines="1"
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_below="@id/et_pass2"
-        android:layout_width="match_parent"
-        android:textSize="16sp"
-        android:layout_height="55dp"
-        android:drawableLeft="@drawable/call"
-        android:drawablePadding="15dp"
-        android:hint="Số điện thoại"/>
+
     <Button
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
@@ -107,23 +108,24 @@
         android:background="@color/oranges"
         android:textColor="#fff"
         android:layout_marginTop="25dp"
-        android:layout_below="@id/soDT"
+        android:layout_below="@id/et_pass2"
         android:layout_width="match_parent"
         android:layout_height="35dp"/>
+
     <Button
-        android:paddingRight="34dp"
-        android:paddingStart="10dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp"
         android:id="@+id/bt_dangNhapVoiGoogle"
-        android:text="Đăng nhập với google"
-        android:background="#206E23"
-        android:textColor="#fff"
-        android:drawableLeft="@drawable/logo_google"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/bt_dangKy"
         android:layout_width="match_parent"
-        android:layout_height="35dp"/>
+        android:layout_height="35dp"
+        android:layout_below="@id/bt_dangKy"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:background="#206E23"
+        android:drawableLeft="@drawable/logo_google"
+        android:paddingStart="10dp"
+        android:paddingRight="34dp"
+        android:text="Đăng nhập với google"
+        android:textColor="#fff" />
     <Button
         android:paddingRight="34dp"
         android:paddingStart="10dp"

@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.shopee.R;
-import com.example.shopee.toi.fragment.Fragment_dangnhap;
 
 import java.util.ArrayList;
 
@@ -44,14 +43,25 @@ public class AdapterPosts extends  RecyclerView.Adapter<AdapterPosts.ViewHolder>
         holder.txtCmt.setText(posts.get(position).getCmt()+"");
         holder.txtView.setText(posts.get(position).getView()+"");
 
+        holder.imgLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int result = Integer.parseInt(holder.txtLike.getText().toString());
+                if(posts.get(position).getLike() == result) {
+                    holder.txtLike.setText(posts.get(position).getLike() + 1 + "");
+                    holder.imgLike.setImageResource(R.drawable.heart_do);
+                }else
+                {
+                    holder.txtLike.setText(posts.get(position).getLike() + "");
+                    holder.imgLike.setImageResource(R.drawable.heart);
+                }
+            }
+        });
+
         //onclick item thì hiện fragment
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                AppCompatActivity activity = (AppCompatActivity)view.getContext();
-                Fragment_dangnhap fragment_dangnhap = new Fragment_dangnhap();
-                activity.getFragmentManager().beginTransaction().replace(R.id.shopeeFeed,fragment_dangnhap).addToBackStack(null).commit();
-            }
+            public void onClick(View view) {}
         });
     }
 
@@ -64,7 +74,7 @@ public class AdapterPosts extends  RecyclerView.Adapter<AdapterPosts.ViewHolder>
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView txtTenShop,txtLike,txtCmt,txtView ;
-        ImageView imgLogo,imgAnh;
+        ImageView imgLogo,imgAnh,imgLike;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtTenShop = (TextView) itemView.findViewById(R.id.tenShop);
@@ -73,6 +83,7 @@ public class AdapterPosts extends  RecyclerView.Adapter<AdapterPosts.ViewHolder>
             txtLike = (TextView) itemView.findViewById(R.id.text_Like);
             txtCmt = (TextView) itemView.findViewById(R.id.text_Cmt);
             txtView = (TextView) itemView.findViewById(R.id.text_View);
+            imgLike =(ImageView) itemView.findViewById(R.id.img_Like);
         }
     }
 

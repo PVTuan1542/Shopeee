@@ -35,6 +35,7 @@
                 android:layout_height="30dp"
                 android:src="@drawable/ic_mesages"/>
             <ImageView
+                android:id="@+id/img_account"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/toi"
